@@ -1,0 +1,135 @@
+[gd_scene load_steps=11 format=3 uid="uid://btv7lioe4jfey"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_7x7sm"]
+[ext_resource type="Texture2D" uid="uid://bm3iuq5cb0c0f" path="res://Arte/fundo.png" id="1_i4odl"]
+[ext_resource type="FontFile" uid="uid://bg3da7emk0bl7" path="res://Arte/DeltaBlock-Regular.ttf" id="2_eu7dg"]
+[ext_resource type="AudioStream" uid="uid://dem3cjo3jc1b6" path="res://Arte/Sons/Musica Mapa 3.wav" id="4_fomxt"]
+[ext_resource type="AudioStream" uid="uid://dq4pd1hpgt7sj" path="res://Arte/Sons/MenuBtnSoundEffectwav.wav" id="5_uvtix"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_baxe5"]
+texture = ExtResource("1_i4odl")
+modulate_color = Color(0.481789, 0.481789, 0.481789, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imilw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg3li"]
+bg_color = Color(0.117865, 0.335744, 0.18441, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ajre"]
+bg_color = Color(0.117647, 0.337255, 0.184314, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgn4g"]
+bg_color = Color(0.183154, 0.486732, 0.276201, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7x7sm")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_baxe5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -40.0
+offset_right = 132.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_imilw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sg3li")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ajre")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sgn4g")
+text = "Jogar
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_imilw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sg3li")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ajre")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sgn4g")
+text = "Sair
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -271.0
+offset_right = 276.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_eu7dg")
+theme_override_font_sizes/font_size = 100
+text = "Maze Craze"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fomxt")
+autoplay = true
+
+[node name="Som_botao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uvtix")
+
+[connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_play_button_up"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_play_pressed"]
+[connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_sair_button_down"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_sair_pressed"]

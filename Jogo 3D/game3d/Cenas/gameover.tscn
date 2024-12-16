@@ -1,0 +1,155 @@
+[gd_scene load_steps=13 format=3 uid="uid://d3few1yorleuo"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_bd63k"]
+[ext_resource type="FontFile" uid="uid://bg3da7emk0bl7" path="res://Arte/DeltaBlock-Regular.ttf" id="1_xjbyt"]
+[ext_resource type="AudioStream" uid="uid://dem3cjo3jc1b6" path="res://Arte/Sons/Musica Mapa 3.wav" id="3_qhi08"]
+[ext_resource type="AudioStream" uid="uid://dq4pd1hpgt7sj" path="res://Arte/Sons/MenuBtnSoundEffectwav.wav" id="4_hajtx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yenbm"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pv2bj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ikuf"]
+bg_color = Color(0, 0.4, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdtt5"]
+bg_color = Color(1.04684e-06, 0.400108, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds7ke"]
+bg_color = Color(0, 0.654902, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o534m"]
+bg_color = Color(0.531803, 0.0652103, 4.81308e-08, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xqwn"]
+bg_color = Color(0.533333, 0.0666667, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cyl4"]
+bg_color = Color(0.767086, 0.11339, 3.85046e-07, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bd63k")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yenbm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -40.0
+offset_right = 132.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pv2bj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ikuf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rdtt5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ds7ke")
+text = " Jogar 
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pv2bj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o534m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7xqwn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cyl4")
+text = "Sair
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -271.0
+offset_right = 276.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_xjbyt")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qhi08")
+autoplay = true
+
+[node name="Som_botao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hajtx")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_play_over_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_sair_over_pressed"]
